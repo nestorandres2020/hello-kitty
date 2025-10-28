@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Te Amo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #ff96ee, #f3a8ec);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .container {
+            border-radius: 20px;
+            top: 12%;
+            left: 100%;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            height: 700px;
+            padding: 80px;
+            text-align: center;
+            animation: fadeInUp 0.8s ease;
+            transition: all 0.3s ease;
+        }
+
+        h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 5.5em;
+            background: linear-gradient(45deg, #ff3992, #fe9cac, #f373bd, #ffd6e0);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: colorShift 6s ease infinite, glow 2s ease-in-out infinite;
+            text-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #fff;
+            font-size: 1.4em;
+            margin-top: 15px;
+            font-weight: 300;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        @keyframes colorShift {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        @keyframes glow {
+
+            0%,
+            100% {
+                text-shadow: 0 0 20px rgba(255, 255, 255, 0.6), 0 0 40px rgba(255, 153, 200, 0.5);
+                transform: scale(1);
+            }
+
+            50% {
+                text-shadow: 0 0 35px rgba(255, 255, 255, 0.8), 0 0 70px rgba(255, 102, 153, 0.6);
+                transform: scale(1.05);
+            }
+        }
+
+        /* Hello Kitty */
+        .hello-kitty {
+            width: 260px;
+            height: 190px;
+            background: white;
+            border-radius: 50% 50% 48% 48%;
+            border: 8px solid black;
+            position: relative;
+            margin: 60px auto 0;
+            z-index: 2;
+        }
+
+        /* Orejas */
+        .ear {
+            width: 70px;
+            height: 70px;
+            background: white;
+            border: 8px solid black;
+            border-radius: 30px 70px 40px 65px;
+            position: absolute;
+            top: -50px;
+            z-index: 1;
+        }
+
+        .left-ear {
+            left: 10px;
+            transform: rotate(15deg);
+        }
+
+        .right-ear {
+            right: 10px;
+            transform: rotate(75deg);
+        }
+
+        /* Detalles internos de orejas */
+        .ear-detail {
+            width: 45px;
+            height: 45px;
+            background: white;
+            border: 8px solid white;
+            border-radius: 50%;
+            position: absolute;
+            top: 8px;
+            z-index: 3;
+        }
+
+        .ear-detail-left {
+            left: 12px;
+        }
+
+        .ear-detail-right {
+            right: 12px;
+        }
+
+        /* Ojos */
+        .eye {
+            background: black;
+            width: 22px;
+            height: 28px;
+            border-radius: 50%;
+            position: absolute;
+            top: 80px;
+            z-index: 3;
+        }
+
+        .left-eye {
+            left: 40px;
+
+        }
+
+        .right-eye {
+            right: 40px;
+        }
+
+        /* Nariz */
+        .nose {
+            background: #f2dc04;
+            width: 20px;
+            height: 14px;
+            border-radius: 50%;
+            border: 4px solid black;
+            position: relative;
+            top: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+        }
+
+        /* Bigote */
+        .whisker {
+            width: 66px;
+            border-top: 8px solid black;
+            border-radius: 50%;
+            position: absolute;
+            z-index: 3;
+        }
+
+        .w1 {
+            width: 60px;
+            position: relative;
+            top: 84px;
+            left: 220px;
+            transform: rotate(355deg);
+        }
+
+        .w2 {
+            width: 48px;
+            position: relative;
+            top: 100px;
+            left: 226px;
+            transform: rotate(5deg);
+        }
+
+        .w3 {
+            width: 54px;
+            position: relative;
+            top: 120px;
+            left: 218px;
+            transform: rotate(21deg);
+        }
+
+        .w4 {
+            width: 60px;
+            position: relative;
+            top: 61px;
+            left: -38px;
+            transform: rotate(4deg);
+        }
+
+        .w5 {
+            width: 48px;
+            position: relative;
+            top: 77px;
+            left: -31px;
+            transform: rotate(354deg);
+        }
+
+        .w6 {
+            width: 54px;
+            position: relative;
+            top: 97px;
+            left: -28px;
+            transform: rotate(339deg);
+        }
+
+        /* Lazo */
+        .bow {
+            position: absolute;
+            z-index: 5;
+        }
+
+        .bow-center {
+            width: 40px;
+            height: 40px;
+            background: #E6002E;
+            border: 6px solid black;
+            border-radius: 50%;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .bow-left,
+        .bow-right {
+            width: 55px;
+            height: 70px;
+            background: #E6002E;
+            border: 6px solid black;
+            border-radius: 50%;
+            position: absolute;
+            top: -35px;
+        }
+
+        .bow-left {
+            left: 35px;
+            transform: rotate(20deg);
+        }
+
+        .bow-right {
+            right: 35px;
+            transform: rotate(-20deg);
+        }
+
+        .bow-detail-left,
+        .bow-detail-right {
+            width: 16px;
+            height: 16px;
+            background: white;
+            border-radius: 50%;
+            position: absolute;
+            top: -25px;
+            z-index: 6;
+        }
+
+        .bow-detail-left {
+            left: 55px;
+        }
+
+        .bow-detail-right {
+            right: 55px;
+        }
+
+        /* Corazones flotantes */
+        .heart {
+            position: absolute;
+            font-size: 1.8rem;
+            color: rgba(255, 105, 180, 0.7);
+            pointer-events: none;
+            animation: float 5s linear forwards;
+            z-index: 1;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>I LOVE YOU</h1>
+        <p>Tu amor es tan tierno y mágico como un abrazo de Hello Kitty. <br>
+             Desde que apareciste, mi mundo se volvió
+            rosado, lleno de sonrisas, detalles y esa sensación preciosa de saber que tú existes 💗🐱</p>
+
+
+        <br><br><br><br>
+        <!-- Hello Kitty -->
+        <div class="hello-kitty">
+            <div class="ear left-ear">
+                <div class="ear-detail ear-detail-left"></div>
+            </div>
+            <div class="ear right-ear">
+                <div class="ear-detail ear-detail-right"></div>
+            </div>
+
+            <div class="eye left-eye"></div>
+            <div class="eye right-eye"></div>
+            <div class="nose"></div>
+
+            <div class="whisker w1"></div>
+            <div class="whisker w2"></div>
+            <div class="whisker w3"></div>
+            <div class="whisker w4"></div>
+            <div class="whisker w5"></div>
+            <div class="whisker w6"></div>
+
+            <div class="bow bow-center"></div>
+            <div class="bow bow-left"></div>
+            <div class="bow bow-right"></div>
+            <div class="bow-detail-left"></div>
+            <div class="bow-detail-right"></div>
+        </div>
+    </div>
+
+    <!-- Corazones flotantes -->
+    <script>
+        setInterval(() => {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerHTML = '♡';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (Math.random() * 3 + 4) + 's';
+            document.body.appendChild(heart);
+
+            setTimeout(() => heart.remove(), 7000);
+        }, 300);
+    </script>
+
+</body>
+
+</html>
